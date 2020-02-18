@@ -1,0 +1,135 @@
+.empty {}
+
+a {
+  margin: 0;
+}
+
+[target="_blank"] {
+  color: blue;
+}
+
+#id {
+  color: $color;
+}
+
+.empty-line {
+  display: block;
+
+  background: black;
+  color: white;
+
+  // comment is ignored
+  opacity: 0;
+}
+
+.class {
+  display:block;
+  color : black;
+  background :white;
+}
+
+.class {
+  color: black;
+
+  &::after {
+    content: '';
+  }
+}
+
+.foo {
+  border: none;
+}
+
+.foo-1, .foo-2 {
+  color: black;
+}
+
+.one-line {
+  display: block; color: black;
+}
+
+.one-line2 {display: block; color: black;}
+
+.one-line3 {display: block; color: black; opacity: 0;}
+
+.parent {
+
+  &__child {
+
+    &__child {
+
+      &__child {
+        color: gray;
+      }
+    }
+  }
+}
+
+
+.extend1 {
+  color: black;
+}
+
+.extend2 {
+  @extend .extend1;
+  background: blue;
+}
+
+.declaration-order {
+  font: inherit;
+  display: block;
+}
+
+.include-right-order {
+  --height: 10px;
+  $black: #000;
+
+  @include transition();
+
+  background: green;
+  font-weight: bold;
+
+  @include media-breakpoint-up(sm) {
+    color: yellow;
+  }
+
+  @media (min-width: 100px) {
+    color: blue;
+  }
+}
+
+.include-wrong-order {
+  $black: #000;
+  --height: 10px;
+
+  background: green;
+  font-weight: bold;
+
+  @include transition();
+
+  @media (min-width: 100px) {
+    color: blue;
+  }
+
+  @include media-breakpoint-up(sm) {
+    color: yellow;
+  }
+}
+
+
+@keyframes important1 {
+
+  from {
+    margin-top: 50px;
+  }
+
+  to {
+    margin-top: 100px !important;
+  }
+}
+
+.box {
+  box-shadow:
+    0 0 0 1px #5b9dd9,
+    0 0 2px 1px rgba(30, 140, 190, .8);
+}
