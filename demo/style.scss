@@ -71,8 +71,9 @@ a {
 }
 
 .extend2 {
-  @extend .extend1;
   background: blue;
+
+  @extend .extend1;
 }
 
 .declaration-order {
