@@ -14,7 +14,13 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["at-root", "include", "mixin", "function", "content"]
+        "ignoreAtRules": ["at-root", "include", "mixin", "function", "content", "each", "if", "else"]
+      }
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignore": ["inside-block"]
       }
     ],
     "declaration-block-semicolon-newline-after": "always-multi-line",
@@ -24,10 +30,17 @@
     "declaration-empty-line-before": [
       "never",
       {
-        "ignore": ["after-comment", "at-rule"]
+        "ignore": ["after-comment"]
+      }
+    ],
+    "max-nesting-depth": [
+      5,
+      {
+        "ignore": ["pseudo-classes"]
       }
     ],
     "no-extra-semicolons": true,
+    "number-leading-zero": "always",
     "selector-max-type": 0,
     "selector-max-attribute": 0,
     "selector-no-qualifying-type": true,
